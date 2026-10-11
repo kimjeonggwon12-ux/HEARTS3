@@ -1,0 +1,119 @@
+@import url("node_modules/pretendard/dist/web/static/pretendard.css");
+@import url("node_modules/@fontsource/black-han-sans/index.css");
+@import url("node_modules/@fontsource/nanum-myeongjo/400.css");
+@import url("node_modules/@fontsource/nanum-myeongjo/800.css");
+
+:root{
+  --blue:#1d4ed8; --navy:#0b1f4d; --sky:#e8efff; --yellow:#ffd23f; --yel-soft:#fff6d1;
+  --red:#e2412f; --red-soft:#fde7e3; --green:#12935b; --green-soft:#e2f6ec;
+  --orange:#f07b15; --orange-soft:#fff0e1; --purple:#6b3fd1; --purple-soft:#efe9ff;
+  --ink:#1b2333; --sub:#5a6478; --line:#d6dbe6; --paper:#ffffff; --gold:#b98a16;
+}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#888;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:"Pretendard",sans-serif;color:var(--ink);font-size:11pt;line-height:1.68;word-break:keep-all}
+.page{width:210mm;height:297mm;background:var(--paper);position:relative;overflow:hidden;
+  padding:17mm 16mm 18mm;margin:0 auto 8mm;page-break-after:always;break-after:page}
+@media print{html,body{background:none}.page{margin:0}}
+.bh{font-family:"Black Han Sans",sans-serif;font-weight:400;letter-spacing:-.5px}
+.my{font-family:"Nanum Myeongjo",serif}
+
+/* running header / footer */
+.rh{position:absolute;top:7mm;left:16mm;right:16mm;display:flex;justify-content:space-between;
+  font-size:7.6pt;color:var(--sub);letter-spacing:.3px;border-bottom:1px solid var(--line);padding-bottom:1.6mm}
+.rh b{color:var(--blue)}
+.pn{position:absolute;bottom:7mm;left:0;right:0;text-align:center;font-size:8pt;color:var(--sub)}
+.pn span{display:inline-block;min-width:9mm;padding:.4mm 2mm;border-radius:6mm;background:var(--sky);color:var(--blue);font-weight:700}
+
+/* headings */
+.part-tag{display:inline-block;font-weight:800;font-size:8.5pt;letter-spacing:1.5px;color:#fff;background:var(--blue);
+  padding:1mm 3mm;border-radius:1.5mm;margin-bottom:2.5mm}
+h1{font-family:"Black Han Sans";font-weight:400;font-size:25pt;line-height:1.2;color:var(--navy);letter-spacing:-.5px}
+h1 em{font-style:normal;color:var(--blue)}
+h2{font-size:14pt;font-weight:800;color:var(--navy);margin:5mm 0 2mm;letter-spacing:-.3px}
+h3{font-size:11.2pt;font-weight:800;color:var(--navy);margin:3mm 0 1.2mm}
+.lead{font-size:11pt;color:#344056;margin-top:2mm}
+p+p{margin-top:1.6mm}
+.small{font-size:8.6pt;color:var(--sub)}
+.center{text-align:center}
+.hl{background:linear-gradient(transparent 58%,var(--yellow) 58%);font-weight:700}
+.b{font-weight:800}
+
+/* corner badges */
+.corner{display:flex;align-items:center;gap:2.2mm;margin:4.5mm 0 2mm}
+.corner .ic{width:8mm;height:8mm;border-radius:2mm;display:grid;place-items:center;color:#fff;font-weight:900;font-size:10pt;flex:none}
+.corner .t{font-weight:800;font-size:12pt;letter-spacing:-.2px}
+.corner .en{font-size:7.5pt;font-weight:700;letter-spacing:1.6px;opacity:.7;margin-left:1mm}
+.c-concept .ic{background:var(--blue)} .c-concept .t{color:var(--blue)}
+.c-tool .ic{background:var(--purple)} .c-tool .t{color:var(--purple)}
+.c-practice .ic{background:var(--orange)} .c-practice .t{color:var(--orange)}
+.c-field .ic{background:var(--green)} .c-field .t{color:var(--green)}
+.c-vision .ic{background:var(--red)} .c-vision .t{color:var(--red)}
+
+/* boxes */
+.box{border-radius:3mm;padding:3.4mm 4mm;margin:2.5mm 0}
+.box.sky{background:var(--sky)} .box.yel{background:var(--yel-soft)} .box.red{background:var(--red-soft)}
+.box.green{background:var(--green-soft)} .box.orange{background:var(--orange-soft)} .box.purple{background:var(--purple-soft)}
+.box.line{border:1.2px solid var(--line)}
+.box.navy{background:var(--navy);color:#fff}
+.box h3:first-child{margin-top:0}
+
+/* audio / voice box */
+.voice{display:flex;gap:3mm;border:1.4px solid var(--red);border-radius:3mm;padding:3mm 3.6mm;margin:3mm 0;background:#fffafa}
+.voice .vic{flex:none;width:11mm;height:11mm;border-radius:50%;background:var(--red);display:grid;place-items:center}
+.voice .vic svg{width:6mm;height:6mm;fill:#fff}
+.voice .vt{font-size:8pt;font-weight:800;color:var(--red);letter-spacing:.4px}
+.voice .vq{font-family:"Nanum Myeongjo";font-weight:800;font-size:10.4pt;line-height:1.55;margin-top:.6mm;color:#2b1d1d}
+.voice .vg{font-size:8.6pt;color:#6b4a4a;margin-top:1mm}
+
+/* scripture */
+.word{border-left:1.6mm solid var(--gold);background:#fbf7ec;padding:2.6mm 4mm;margin:3mm 0;border-radius:0 2.5mm 2.5mm 0}
+.word .w{font-family:"Nanum Myeongjo";font-weight:800;font-size:10.2pt;line-height:1.6}
+.word .r{font-size:8.2pt;color:var(--gold);font-weight:800;margin-top:.6mm}
+
+/* layout helpers */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:2.6mm}
+img{display:block;max-width:100%}
+.img{border-radius:2.5mm;overflow:hidden;box-shadow:0 .6mm 2mm rgba(0,0,0,.12)}
+.cap{font-size:7.8pt;color:var(--sub);margin-top:1mm;text-align:center}
+
+/* writing lines */
+.lines{margin-top:1.5mm}
+.lines div{border-bottom:1px dashed #b9c1d1;height:7.6mm}
+.wbox{border:1.2px solid var(--line);border-radius:2.5mm;padding:2.4mm 3mm;min-height:20mm;position:relative}
+.wbox .lb{font-size:8.6pt;font-weight:800;color:var(--navy)}
+.wbox .hint{font-size:7.8pt;color:#8a93a6}
+
+table{border-collapse:collapse;width:100%}
+.tbl th,.tbl td{border:1px solid var(--line);padding:2mm 2.4mm;vertical-align:top;font-size:9.6pt}
+.tbl th{background:var(--navy);color:#fff;font-weight:700;text-align:left}
+.tbl tr:nth-child(even) td{background:#f7f9fd}
+
+ul.dot{list-style:none;margin-top:1mm}
+ul.dot li{position:relative;padding-left:4.2mm;margin:.8mm 0}
+ul.dot li:before{content:"";position:absolute;left:.6mm;top:2.3mm;width:1.7mm;height:1.7mm;border-radius:50%;background:var(--blue)}
+ol.step{list-style:none;counter-reset:s;margin-top:1mm}
+ol.step li{counter-increment:s;position:relative;padding-left:8mm;margin:1.6mm 0}
+ol.step li:before{content:counter(s);position:absolute;left:0;top:.2mm;width:5.6mm;height:5.6mm;border-radius:50%;
+  background:var(--purple);color:#fff;font-weight:800;font-size:8.5pt;display:grid;place-items:center}
+.chk{list-style:none}
+.chk li{padding-left:6.5mm;position:relative;margin:1.3mm 0}
+.chk li:before{content:"";position:absolute;left:0;top:1mm;width:3.6mm;height:3.6mm;border:1.4px solid var(--navy);border-radius:.8mm}
+
+.pill{display:inline-block;padding:.3mm 2.4mm;border-radius:5mm;font-size:8pt;font-weight:800}
+.p-blue{background:var(--sky);color:var(--blue)} .p-red{background:var(--red-soft);color:var(--red)}
+.p-green{background:var(--green-soft);color:var(--green)} .p-orange{background:var(--orange-soft);color:var(--orange)}
+.p-purple{background:var(--purple-soft);color:var(--purple)} .p-yel{background:var(--yel-soft);color:#8a6400}
+
+/* part opener band */
+.band{margin:-17mm -16mm 6mm;padding:15mm 16mm 9mm;color:#fff;position:relative}
+.band.blue{background:linear-gradient(135deg,#1d4ed8,#0b1f4d)}
+.band .num{font-family:"Black Han Sans";font-size:11pt;letter-spacing:2px;color:var(--yellow)}
+.band h1{color:#fff;font-size:27pt;margin-top:1mm}
+.band h1 em{color:var(--yellow)}
+.band .lead{color:#dbe5ff}
+
+.kpi{font-family:"Black Han Sans";font-size:28pt;line-height:1}
